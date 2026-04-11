@@ -1,0 +1,2 @@
+Safe command "show version": allowed = True, level = CommandRiskLevel.SAFE
+Expected: allowed=True, level=SAFE

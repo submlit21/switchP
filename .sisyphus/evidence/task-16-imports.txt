@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "/home/hs/workspace/opencode/switchP/tools/__init__.py", line 5, in <module>
+    from .device import register_tools as register_device_tools
+  File "/home/hs/workspace/opencode/switchP/tools/device.py", line 46
+    try:
+IndentationError: unexpected indent

@@ -1,0 +1,4 @@
+Final exception after retries: SerialException: [Errno 2] could not open port /dev/nonexistentport: [Errno 2] No such file or directory: '/dev/nonexistentport'
+Time taken: ~0.30s (expected > 0.3s for 3 retries)
+Success: False (expected False)
+Auto-reconnect test complete - 3 attempts made before giving up

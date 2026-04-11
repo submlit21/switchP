@@ -1,0 +1,5 @@
+Port: /dev/ttyUSB0
+Baud rate: 9600
+---
+Port with env: /dev/ttyACM0
+Baud rate with env: 115200

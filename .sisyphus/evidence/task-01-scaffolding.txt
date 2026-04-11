@@ -1,0 +1,11 @@
+-rw-rw-r-- 1 hs hs  53  4月 11 00:59 core/__init__.py
+-rw-rw-r-- 1 hs hs  60  4月 11 00:59 session/__init__.py
+-rw-rw-r-- 1 hs hs 159  4月 11 02:52 tools/__init__.py
+====
+-rw-rw-r-- 1 hs hs 241  4月 11 01:00 .env.example
+-rw-rw-r-- 1 hs hs  67  4月 11 01:00 requirements.txt
+-rw-rw-r-- 1 hs hs  54  4月 11 01:00 tests/__init__.py
+pyserial>=3.5
+mcp[fastmcp]>=1.0
+pydantic-settings>=2.0
+pytest>=7.0

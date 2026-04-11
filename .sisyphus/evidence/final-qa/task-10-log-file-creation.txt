@@ -1,0 +1,3 @@
+Log files found: 2
+  logs/test-client_20260411_130707_test-session-123.log
+  logs/test-client_20260411_130716_test-session-123.log

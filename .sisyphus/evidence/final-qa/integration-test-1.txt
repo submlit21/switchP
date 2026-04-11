@@ -1,0 +1,4 @@
+Session created with client_id: integration-test
+Session has connection: True
+Session has state: True
+Integration Test 1 passed: Configuration + Session Manager

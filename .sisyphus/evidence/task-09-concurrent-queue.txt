@@ -1,0 +1,5 @@
+Total commands executed: 10
+Result order: ['cmd-0', 'cmd-1', 'cmd-2', 'cmd-3', 'cmd-4', 'cmd-5', 'cmd-6', 'cmd-7', 'cmd-8', 'cmd-9']
+Expected order: ['cmd-0', 'cmd-1', 'cmd-2', 'cmd-3', 'cmd-4', 'cmd-5', 'cmd-6', 'cmd-7', 'cmd-8', 'cmd-9']
+Order is correct: True
+OK: All commands executed sequentially in correct order with no interleaving

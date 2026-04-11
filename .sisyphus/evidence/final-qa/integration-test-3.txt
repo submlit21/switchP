@@ -1,0 +1,9 @@
+Initial state: DeviceState.DISCONNECTED
+Transition to CONNECTING: True
+Current state: DeviceState.CONNECTING
+Transition to AUTHENTICATING: True
+Current state: DeviceState.AUTHENTICATING
+Credentials set: username=admin, password=secret123
+Transition to AUTHENTICATED: True
+Current state: DeviceState.AUTHENTICATED
+Integration Test 3 passed: State Machine + Session Manager

@@ -1,0 +1,144 @@
+F4 Scope Fidelity Check - Network Console MCP Server
+Date: 2026-04-11
+Check: Verify 1:1 compliance with plan tasks 1-16
+
+=== TASK COMPLIANCE ===
+
+Task 1: Add package scaffolding + dependencies
+✓ All __init__.py files exist (core/, session/, tools/)
+✓ requirements.txt contains pyserial, mcp[fastmcp], pydantic-settings, pytest
+✓ tests/__init__.py exists
+✓ .env.example documents PORT and BAUD_RATE
+✓ No business logic added
+
+Task 2: Create configuration module
+✓ config.py uses pydantic-settings with defaults
+✓ Exports config object
+✓ No hardcoded configuration elsewhere found
+
+Task 3: Implement core/state_machine.py
+✓ DeviceState enum with all required states
+✓ DeviceSessionState class with transition validation
+✓ Stores credentials, prompt patterns, last output
+✓ No serial communication or device detection
+
+Task 4: Implement core/guardrails.py
+✓ CommandRiskLevel enum with SAFE, CONFIRMATION_REQUIRED, BLOCKED
+✓ BLOCKED_COMMANDS and CONFIRMATION_COMMANDS lists match spec
+✓ check_command returns (is_allowed, risk_level, message)
+✓ detect_credential_prompt implemented
+✓ No command execution logic
+
+Task 5: Add test infrastructure
+✓ conftest.py exists
+✓ test_state_machine.py and test_guardrails.py exist
+✓ pytest.ini exists
+⚠ EXTRA: test_session_manager.py (tests module from Task 9) - cross-task contamination
+✓ No requirement for 100% coverage
+
+Task 6: Create vendor resource framework
+✓ resources/vendor/ directory structure exists
+✓ VendorCommandTable abstract base class
+✓ register_vendor_resources function
+✓ No actual vendor command tables added
+
+Task 7: Implement session/connection.py
+✓ SerialConnection class with open/close/send_command/read_until_prompt
+✓ Auto-reconnect with 3 attempts and backoff
+✓ Uses configuration from config.py
+✓ No session management or state machine transitions
+
+Task 8: Implement session/parser.py
+✓ PromptDetector class detects username/password/CLI prompts
+✓ strip_echo method removes command echo
+✓ Stores learned prompt patterns
+✓ No automatic credential sending
+
+Task 9: Implement session/manager.py
+✓ SessionManager class thread-safe with two-level locking
+✓ One session per client, per-session locking for command queuing
+✓ Session dataclass contains required components
+✓ Integrates with logging placeholder
+✓ No connection implementation or MCP tool exposure
+
+Task 10: Implement session logging
+✓ SessionLogger class creates log file per session
+✓ File naming: {client_id}_{timestamp}_{session_id}.log
+✓ Credential redaction with regex patterns
+✓ Flush after each write
+✓ No plaintext credential logging
+
+Task 11: Implement tools/credentials.py
+✓ set_credentials MCP tool registered
+✓ Stores username/password in session state (in-memory)
+✓ Returns JSON response via format_response
+✓ No business logic beyond interface
+
+Task 12: Implement tools/execute.py
+✓ execute_command MCP tool with guardrails integration
+✓ Handles BLOCKED, CONFIRMATION_REQUIRED, SAFE commands
+✓ Auto-sends credentials when prompts detected
+✓ Logs command/response via session logger
+✓ Returns JSON structured response
+✓ No guardrails or session management logic in tool
+
+Task 13: Implement tools/interactive.py
+✓ start_interactive_session and stop_interactive_session tools
+✓ Creates/closes sessions via session manager
+✓ Accepts custom stop pattern
+✓ Returns JSON response
+✓ No session management logic in tool
+
+Task 14: Implement tools/device.py
+✓ check_connection tool verifies serial port accessibility
+✓ get_device_info tool executes version commands and parses output
+✓ Returns JSON structured response
+✓ Delegates connection logic to SerialConnection
+
+Task 15: Refactor server.py
+✓ Only imports and registers tools/resources
+✓ No serial communication or business logic
+✓ Uses configuration from config module
+
+Task 16: Add JSON response wrapping
+✓ tools/utils.py with format_response helper
+✓ All tools use format_response for consistent JSON output
+✓ No plain text responses from any tool
+
+=== CROSS-TASK CONTAMINATION ===
+
+1 issue found:
+- Task 5 (test infrastructure) created tests/test_session_manager.py, which tests module from Task 9 (session manager). This violates "don't test modules that don't exist yet" constraint.
+
+=== UNACCOUNTED CHANGES ===
+
+7 files not mentioned in any task specification:
+- __init__.py (root) - empty package file
+- AGENTS.md (root) - project knowledge base
+- core/AGENTS.md - module knowledge base
+- session/AGENTS.md - module knowledge base
+- tools/AGENTS.md - module knowledge base
+- resources/AGENTS.md - module knowledge base
+- docs/superpowers/plans/2026-04-11-execute-command-tool.md - plan file
+
+These appear to be auto-generated documentation/knowledge base files and do not affect functionality. However, they constitute scope creep.
+
+=== SUMMARY METRICS ===
+
+Tasks: 15/16 compliant (Task 5 has contamination)
+Contamination: 1 issue (cross-task file)
+Unaccounted: 7 files (documentation/knowledge base)
+
+=== VERDICT ===
+
+REJECT
+
+Rationale:
+- Task 5 violates "Must NOT do" clause (testing modules that don't exist yet)
+- 7 unaccounted files indicate scope creep (documentation/knowledge base files not specified in plan)
+- While functional implementation matches spec, fidelity to scope requirements is not 1:1.
+
+Recommendations:
+1. Remove test_session_manager.py or move to appropriate wave.
+2. Either incorporate knowledge base files into plan or remove them.
+3. Re-run scope fidelity check after corrections.

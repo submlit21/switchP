@@ -1,0 +1,6 @@
+Start result: {'success': True, 'client_id': 'test-client', 'message': 'Interactive session started successfully', 'has_stop_pattern': False, 'stop_pattern': None}
+Success: True
+OK: Session exists after start
+Stop result: {'success': True, 'client_id': 'test-client', 'message': 'Interactive session stopped successfully'}
+Stop success: True
+OK: Session correctly removed - got expected exception

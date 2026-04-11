@@ -1,0 +1,14 @@
+Found files matching pattern: ['logs/client1_20260411_031015_abc123.log']
+OK: Log file created with correct naming containing client1 and abc123
+File content:
+=== Session Started ===
+Client ID: client1
+Session ID: abc123
+Started at: 20260411_031015
+
+[2026-04-11T03:10:15.823370] C: show version
+[2026-04-11T03:10:15.823387] R: Cisco IOS Software...
+
+=== Session Ended ===
+Ended at: 2026-04-11T03:10:15.823392
+

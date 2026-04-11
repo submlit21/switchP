@@ -1,0 +1,102 @@
+# =========================
+
+# Python Bytecode / Cache
+
+# =========================
+
+**pycache**/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+
+# Virtual Environments
+
+# =========================
+
+.venv/
+venv/
+env/
+ENV/
+
+# Local env / secrets
+
+.env
+.env.local
+.env.*.local
+
+# =========================
+
+# Testing / Coverage
+
+# =========================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+
+# Build / Packaging
+
+# =========================
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+
+# IDE / Editor
+
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+
+# OS / Filesystem Noise
+
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+
+# Runtime Logs
+
+# =========================
+
+logs/
+*.log
+
+# =========================
+
+# Sensitive Credential Files
+
+# (Adjust if your project stores creds locally)
+
+# =========================
+
+secrets/
+*.pem
+*.key
+*.crt
+credentials.local.json
+
+# =========================
+
+# Optional Temporary Files
+
+# =========================
+
+tmp/
+temp/
+*.tmp

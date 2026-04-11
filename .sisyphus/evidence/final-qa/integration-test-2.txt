@@ -1,0 +1,3 @@
+Blocked command check: allowed=False, level=CommandRiskLevel.BLOCKED
+Safe command check: allowed=True, level=CommandRiskLevel.SAFE
+Integration Test 2 passed: Guardrails + Session Manager + Logger

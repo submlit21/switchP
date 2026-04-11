@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+ImportError: cannot import name 'execute_command' from 'tools.execute' (/home/hs/workspace/opencode/switchP/tools/execute.py)

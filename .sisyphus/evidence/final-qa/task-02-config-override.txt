@@ -1,0 +1,2 @@
+Port (overridden): /dev/ttyACM0
+Baud Rate (overridden): 115200

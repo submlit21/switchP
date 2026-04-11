@@ -1,0 +1,5 @@
+All Task 1 files exist
+requirements.txt has pyserial: True
+requirements.txt has mcp: True
+requirements.txt has pydantic-settings: True
+requirements.txt has pytest: True

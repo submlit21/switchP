@@ -1,0 +1,2 @@
+Confirmation-required command: allowed = False, level = CommandRiskLevel.CONFIRMATION_REQUIRED
+Expected: allowed=False, level=CONFIRMATION_REQUIRED

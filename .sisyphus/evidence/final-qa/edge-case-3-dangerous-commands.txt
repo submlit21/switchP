@@ -1,0 +1,35 @@
+Testing blocked commands:
+PASS: "reload" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "reboot" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "format" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "format flash:" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "erase startup-config" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "write erase" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "delete flash:" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "erase flash:" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "factory-reset" -> allowed=False, level=CommandRiskLevel.BLOCKED
+PASS: "reset saved-configuration" -> allowed=False, level=CommandRiskLevel.BLOCKED
+
+Testing confirmation-required commands:
+PASS: "interface GigabitEthernet0/0" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "shutdown" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "no shutdown" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "ip address 192.168.1.1 255.255.255.0" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "vlan 10" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "route 10.0.0.0 255.0.0.0" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "ip route 0.0.0.0 0.0.0.0 192.168.1.1" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "access-list 100 permit ip any any" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "firewall enable" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "nat inside source list 1 interface GigabitEthernet0/0 overload" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "security-policy rule 1" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+
+Testing safe commands:
+PASS: "show version" -> allowed=True, level=CommandRiskLevel.SAFE
+PASS: "display version" -> allowed=True, level=CommandRiskLevel.SAFE
+FAIL: "show interfaces" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+FAIL: "show ip route" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "ping 192.168.1.1" -> allowed=True, level=CommandRiskLevel.SAFE
+FAIL: "traceroute 192.168.1.1" -> allowed=False, level=CommandRiskLevel.CONFIRMATION_REQUIRED
+PASS: "show running-config" -> allowed=True, level=CommandRiskLevel.SAFE
+
+Edge Case 3 passed: Dangerous Command Blocking

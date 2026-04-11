@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+ImportError: cannot import name '_session_manager' from 'session.manager' (/home/hs/workspace/opencode/switchP/session/manager.py). Did you mean: 'SessionManager'?
+Start result: {'success': True, 'client_id': 'test-client', 'message': 'Interactive session started successfully', 'has_stop_pattern': False, 'stop_pattern': None}
+Success: True
+Client ID: test-client

@@ -1,0 +1,3 @@
+OK
+=== Checking for serial logic in server.py ===
+=== Done - above lines should be empty ===

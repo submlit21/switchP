@@ -1,0 +1,6 @@
+Password: detected as password
+Username: detected as username
+Device#: detected as cli
+Device>: detected as cli
+No prompt: detected as None
+Strip echo test: "Cisco IOS Software..."

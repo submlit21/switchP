@@ -1,0 +1,7 @@
+Connection created: <session.connection.SerialConnection object at 0x77dd8be48950>
+is_open before open: False
+Testing methods exist: open(), close(), send_command(), read_until_prompt()
+Connection failed as expected (no hardware): SerialException: [Errno 2] could not open port /dev/nonexistentport: [Errno 2] No such file or directory: '/dev/nonexistentport'
+is_open after failed open: False
+Connection close complete without exception
+OK - lifecycle methods work

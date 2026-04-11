@@ -1,0 +1,6 @@
+Transition DISCONNECTED→CONNECTING: True
+Current state: DeviceState.CONNECTING
+---
+Transition CONNECTING→AUTHENTICATED (skip AUTHENTICATING): False
+Transition CONNECTING→AUTHENTICATING→AUTHENTICATED: success=True
+Final state: DeviceState.AUTHENTICATED

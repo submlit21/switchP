@@ -1,0 +1,41 @@
+Command: reload
+  Allowed: False
+  Level: CommandRiskLevel.BLOCKED
+  Message: Command 'reload' is blocked - this operation can c...
+
+Command: reboot
+  Allowed: False
+  Level: CommandRiskLevel.BLOCKED
+  Message: Command 'reboot' is blocked - this operation can c...
+
+Command: format
+  Allowed: False
+  Level: CommandRiskLevel.BLOCKED
+  Message: Command 'format' is blocked - this operation can c...
+
+Command: erase startup-config
+  Allowed: False
+  Level: CommandRiskLevel.BLOCKED
+  Message: Command 'erase startup-config' is blocked - this o...
+
+Command: write erase
+  Allowed: False
+  Level: CommandRiskLevel.BLOCKED
+  Message: Command 'write erase' is blocked - this operation ...
+
+Command: show version
+  Allowed: True
+  Level: CommandRiskLevel.SAFE
+
+Command: show interfaces
+  Allowed: False
+  Level: CommandRiskLevel.CONFIRMATION_REQUIRED
+
+Command: show ip route
+  Allowed: False
+  Level: CommandRiskLevel.CONFIRMATION_REQUIRED
+
+Command: display version
+  Allowed: True
+  Level: CommandRiskLevel.SAFE
+

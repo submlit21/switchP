@@ -1,0 +1,19 @@
+Command: interface GigabitEthernet0/0
+  Allowed: False
+  Level: CommandRiskLevel.CONFIRMATION_REQUIRED
+  Message: Command 'interface' requires confirmation. Please ...
+
+Command: shutdown
+  Allowed: False
+  Level: CommandRiskLevel.CONFIRMATION_REQUIRED
+  Message: Command 'shutdown' requires confirmation. Please c...
+
+Command: ip address 192.168.1.1 255.255.255.0
+  Allowed: False
+  Level: CommandRiskLevel.CONFIRMATION_REQUIRED
+  Message: Command 'ip address' requires confirmation. Please...
+
+Credential prompt detection:
+Username: True
+Password: True
+Device#: False

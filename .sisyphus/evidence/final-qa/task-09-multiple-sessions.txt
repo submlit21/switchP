@@ -1,0 +1,6 @@
+Session 1 created: True
+Session 2 created: True
+Sessions are different: True
+Retrieved same session: True
+Session properly closed
+All sessions closed

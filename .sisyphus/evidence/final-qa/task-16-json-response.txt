@@ -1,0 +1,9 @@
+Result type: <class 'dict'>
+Result keys: ['success', 'output', 'message', 'action']
+Has all required keys: True
+success is bool: True
+output is str: True
+message is str: True
+action is None or str: True
+Additional kwargs included: True
+Command value: show version

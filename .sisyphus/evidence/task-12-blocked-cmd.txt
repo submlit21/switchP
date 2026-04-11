@@ -1,0 +1,2 @@
+Blocked command "reload": allowed = False, level = CommandRiskLevel.BLOCKED, msg = Command 'reload' is blocked - this operation can cause severe configuration or device impact.
+Expected: allowed=False, level=BLOCKED

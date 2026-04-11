@@ -1,0 +1,3 @@
+Blocked command "reload": allowed=False, message=Command 'reload' is blocked - this operation can cause severe configuration or device impact.
+---
+Safe command "show version": allowed=True

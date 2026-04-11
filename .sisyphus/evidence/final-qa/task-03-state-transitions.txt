@@ -1,0 +1,8 @@
+Initial state: DeviceState.DISCONNECTED
+Transition DISCONNECTED→CONNECTING: True
+Current state: DeviceState.CONNECTING
+Transition CONNECTING→AUTHENTICATED: False
+Transition CONNECTING→AUTHENTICATING: True
+Transition AUTHENTICATING→AUTHENTICATED: True
+Can transition to ERROR from any state: True
+Transition ERROR→DISCONNECTED: True

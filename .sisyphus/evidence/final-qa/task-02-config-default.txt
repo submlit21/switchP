@@ -1,0 +1,2 @@
+Port (default): /dev/ttyUSB0
+Baud Rate (default): 9600
