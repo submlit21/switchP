@@ -79,7 +79,7 @@ python server.py
 Or run directly for testing:
 
 ```bash
-python -c "import sys; sys.path.insert(0, '.'); from server import mcp; mcp.run(transport='stdio')"
+python -c "from server import mcp; mcp.run(transport='stdio')"
 ```
 
 ### Available MCP Tools
@@ -202,23 +202,28 @@ The system implements a 2-tier safety validation system:
 
 ### Blocked Commands
 - `reload`
-- `write erase`
-- `delete flash:`
+- `reboot`
+- `format`
 - `format flash:`
 - `erase startup-config`
-- `erase nvram:`
-- `debug all`
-- `no debug all`
+- `write erase`
+- `delete flash:`
+- `erase flash:`
+- `factory-reset`
+- `reset saved-configuration`
 
 ### Confirmation-Required Commands
-- `configure terminal`
 - `interface`
-- `vlan`
-- `ip address`
-- `no shutdown`
 - `shutdown`
-- `copy running-config startup-config`
-- `write memory`
+- `no shutdown`
+- `ip address`
+- `vlan`
+- `route`
+- `ip route`
+- `access-list`
+- `firewall`
+- `nat`
+- `security-policy`
 
 ## Session Management
 
@@ -373,6 +378,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
+- [OpenCode](https://github.com/oh-my-opencode/opencode) — the AI orchestration framework that built this project
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) for the protocol specification
 - [FastMCP](https://github.com/modelcontextprotocol/python-sdk) for the Python SDK
 - [pyserial](https://github.com/pyserial/pyserial) for serial communication
