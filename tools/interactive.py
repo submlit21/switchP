@@ -1,18 +1,13 @@
 """Interactive session management tools for NetworkConsole MCP server."""
 
-import sys
-import os
 from typing import Optional, Dict, Any
 from mcp.server.fastmcp import FastMCP
-
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from session.manager import SessionManager, Session
+from session import get_session_manager
 from .utils import format_response
 
-# Global singleton session manager instance
-_session_manager = SessionManager()
+
+# Global singleton session manager instance (shared)
+_session_manager = get_session_manager()
 
 
 def start_interactive_session(

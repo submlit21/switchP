@@ -2,18 +2,13 @@
 
 from mcp.server.fastmcp import FastMCP
 from typing import Dict, Any
-import sys
-import os
 
-# Add parent directory to path for absolute imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from session.manager import SessionManager
+from session import get_session_manager
 from .utils import format_response
 
 
-# Global session manager instance
-_session_manager: SessionManager = SessionManager()
+# Global session manager instance (shared singleton)
+_session_manager = get_session_manager()
 
 
 def register_tools(mcp: FastMCP) -> None:
@@ -43,6 +38,7 @@ def register_tools(mcp: FastMCP) -> None:
             def update_credentials(sess):
                 sess.username = username
                 sess.password = password
+                sess.state.set_credentials(username, password)
 
             _session_manager.with_session_lock(client_id, update_credentials)
 

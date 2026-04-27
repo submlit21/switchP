@@ -83,8 +83,8 @@ class Guardrails:
         # Check for blocked commands
         for blocked in self.BLOCKED_COMMANDS:
             blocked_lower = blocked.lower()
-            if blocked_lower in cleaned_command or cleaned_command.startswith(
-                blocked_lower + " "
+            if cleaned_command == blocked_lower or cleaned_command.startswith(
+                blocked_lower
             ):
                 return (
                     False,
@@ -95,7 +95,7 @@ class Guardrails:
         # Check for confirmation required commands
         for confirm_required in self.CONFIRMATION_COMMANDS:
             confirm_lower = confirm_required.lower()
-            if confirm_lower in cleaned_command or cleaned_command.startswith(
+            if cleaned_command == confirm_lower or cleaned_command.startswith(
                 confirm_lower + " "
             ):
                 return (

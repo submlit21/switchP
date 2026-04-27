@@ -1,20 +1,16 @@
 """Device information and connection check MCP tool implementation."""
 
-import sys
-import os
 import re
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from typing import Optional, Dict, Any, Tuple
 from mcp.server.fastmcp import FastMCP
-from session.manager import SessionManager, Session
+from session import get_session_manager
+from session.manager import Session
 from session.connection import SerialConnection
 from config import config
 from .utils import format_response
 
-# Global instances - initialized once when registering tools
-_session_manager: Optional[SessionManager] = None
+# Global session manager instance (shared singleton)
+_session_manager = get_session_manager()
 
 
 def register_tools(mcp: FastMCP) -> None:
@@ -23,8 +19,6 @@ def register_tools(mcp: FastMCP) -> None:
     Args:
         mcp: The MCP server instance to register with.
     """
-    global _session_manager
-    _session_manager = SessionManager()
 
     @mcp.tool()
     def check_connection(
@@ -104,8 +98,6 @@ def register_tools(mcp: FastMCP) -> None:
         Returns:
             Structured JSON response with parsed device information including vendor, model, version.
         """
-        assert _session_manager is not None, "SessionManager not initialized"
-
         # List of common version commands to try if none provided
         version_commands = (
             command

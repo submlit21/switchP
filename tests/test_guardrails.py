@@ -120,3 +120,35 @@ class TestGuardrails:
         assert allowed is True
         assert level == CommandRiskLevel.SAFE
         assert msg == ""
+
+    def test_show_interfaces_is_safe(self):
+        """Test that show interfaces is SAFE (not flagged by 'interface' substring match)."""
+        guard = Guardrails()
+        allowed, level, msg = guard.check_command("show interfaces")
+
+        assert allowed is True
+        assert level == CommandRiskLevel.SAFE
+
+    def test_show_ip_route_is_safe(self):
+        """Test that show ip route is SAFE (not flagged by 'route' substring match)."""
+        guard = Guardrails()
+        allowed, level, msg = guard.check_command("show ip route")
+
+        assert allowed is True
+        assert level == CommandRiskLevel.SAFE
+
+    def test_traceroute_is_safe(self):
+        """Test that traceroute is SAFE (not flagged by 'route' substring match)."""
+        guard = Guardrails()
+        allowed, level, msg = guard.check_command("traceroute 192.168.1.1")
+
+        assert allowed is True
+        assert level == CommandRiskLevel.SAFE
+
+    def test_show_vlan_is_safe(self):
+        """Test that show vlan is SAFE (not flagged by 'vlan' substring match)."""
+        guard = Guardrails()
+        allowed, level, msg = guard.check_command("show vlan")
+
+        assert allowed is True
+        assert level == CommandRiskLevel.SAFE

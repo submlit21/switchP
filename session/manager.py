@@ -96,6 +96,3 @@ class SessionManager:
         with session.lock:
             return func(session)
 
-    def _log_command(self, client_id: str, command: str, response: str) -> None:
-        """Placeholder for session logging (task 10)."""
-        pass
