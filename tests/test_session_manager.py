@@ -1,7 +1,6 @@
 """Tests for thread-safe session manager."""
 
 import pytest
-from unittest.mock import Mock, patch
 import threading
 import time
 
@@ -78,7 +77,7 @@ class TestSessionManager:
     def test_per_session_locking_queues_commands(self):
         """Test that commands for same session are queued and executed sequentially."""
         manager = SessionManager()
-        session = manager.create_session("client1")
+        manager.create_session("client1")
         execution_order = []
         lock_held = threading.Event()
         proceed = threading.Event()

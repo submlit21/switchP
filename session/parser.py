@@ -62,9 +62,9 @@ class PromptDetector:
         command_clean = command.rstrip("\n\r")
 
         if output.startswith(command_clean):
-            return output[len(command_clean) :].lstrip("\n\r")
+            return output[len(command_clean):].lstrip("\n\r")
 
         if output.startswith(command_clean + "\r"):
-            return output[len(command_clean) + 1 :].lstrip("\n\r")
+            return output[len(command_clean) + 1:].lstrip("\n\r")
 
         return output

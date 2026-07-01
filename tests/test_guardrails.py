@@ -1,6 +1,5 @@
 """Tests for command guardrails validation."""
 
-import pytest
 from core.guardrails import Guardrails, CommandRiskLevel
 
 
@@ -54,7 +53,8 @@ class TestGuardrails:
     def test_confirmation_required_command_with_args_requires_confirm(self):
         """Test that confirmation required commands with arguments need confirmation."""
         guard = Guardrails()
-        allowed, level, msg = guard.check_command("interface GigabitEthernet 0/1")
+        allowed, level, msg = guard.check_command(
+            "interface GigabitEthernet 0/1")
 
         assert allowed is False
         assert level == CommandRiskLevel.CONFIRMATION_REQUIRED
@@ -73,7 +73,8 @@ class TestGuardrails:
         guard.confirm_command("shutdown")
 
         # Second check should allow it
-        allowed_confirm, level_confirm, msg_confirm = guard.check_command("shutdown")
+        allowed_confirm, level_confirm, msg_confirm = guard.check_command(
+            "shutdown")
         assert allowed_confirm is True
         assert level_confirm == CommandRiskLevel.CONFIRMATION_REQUIRED
         assert "Command confirmed" in msg_confirm

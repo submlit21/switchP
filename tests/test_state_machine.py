@@ -1,6 +1,5 @@
 """Tests for DeviceSessionState machine."""
 
-import pytest
 from core.state_machine import DeviceSessionState, DeviceState
 
 

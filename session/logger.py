@@ -1,7 +1,6 @@
 import datetime
 import os
 import re
-from typing import Optional
 
 
 class SessionLogger:
@@ -50,7 +49,8 @@ class SessionLogger:
 
     def _write_header(self) -> None:
         """Write session start header to log."""
-        start_msg = f"=== Session Started ===\nClient ID: {self.client_id}\nSession ID: {self.session_id}\nStarted at: {self.timestamp}\n\n"
+        start_msg = f"=== Session Started ===\nClient ID: {self.client_id}\nSession ID: {
+            self.session_id}\nStarted at: {self.timestamp}\n\n"
         self.file.write(start_msg)
         self.file.flush()
 
@@ -91,7 +91,8 @@ class SessionLogger:
     def close(self) -> None:
         """Close the log file."""
         if not self.file.closed:
-            end_msg = f"\n=== Session Ended ===\nEnded at: {datetime.datetime.now().isoformat()}\n"
+            end_msg = f"\n=== Session Ended ===\nEnded at: {
+                datetime.datetime.now().isoformat()}\n"
             self.file.write(end_msg)
             self.file.flush()
             self.file.close()

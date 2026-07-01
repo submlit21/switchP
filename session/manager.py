@@ -7,7 +7,6 @@ from session.connection import SerialConnection
 from core.state_machine import DeviceSessionState
 from session.parser import PromptDetector
 from session.logger import SessionLogger
-import config
 
 
 @dataclass
@@ -95,4 +94,3 @@ class SessionManager:
         session = self.get_session(client_id)
         with session.lock:
             return func(session)
-
