@@ -1,2 +1,0 @@
-Interactive module imports successfully
-register_tools function exists: True

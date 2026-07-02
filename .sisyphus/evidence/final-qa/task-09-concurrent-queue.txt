@@ -1,3 +1,0 @@
-Total commands executed: 10
-All 10 commands executed: True
-Results order preserved: True

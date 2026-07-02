@@ -1,4 +1,0 @@
-Detect "Password:": password
-Detect "Username:": username
-Detect "Device>": cli
-Detect "Device#": cli
